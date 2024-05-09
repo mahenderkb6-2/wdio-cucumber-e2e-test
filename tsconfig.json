@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "ESNext", //modified
+        "target": "es2022",
+        "lib": [
+            "es2022", 
+            "dom"
+        ],
+        "types": [
+            "node",
+            "@wdio/globals/types",
+            "expect-webdriverio",
+            "@wdio/cucumber-framework"
+        ],
+        "skipLibCheck": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,  //checked //modified
+        "esModuleInterop": true,   //added //modified
+        "isolatedModules": true,    
+        "strict": false,    //modified 
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true
+    },
+    "include": [
+        "test",
+        "wdio.conf.ts"
+    ]
+}
