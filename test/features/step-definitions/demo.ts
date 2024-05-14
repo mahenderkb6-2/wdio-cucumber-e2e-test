@@ -9,6 +9,7 @@ Given(/^Google page is opened$/, async function () {
   // browser.debug()
   await browser.pause(3000); //pauses for 3secs
   console.log(`After opening the browser....`);
+  // console.log(`>> BrowserObj: ${JSON.stringify(browser)}`) // to know the details of browser
 });
 
 When(/^Search with (.*)$/, async function (searchItem) {
@@ -17,6 +18,7 @@ When(/^Search with (.*)$/, async function (searchItem) {
   // await ele.click()
   await ele.setValue(searchItem);
   await browser.keys("Enter");
+  // console.log(`>> EleObj: ${JSON.stringify(ele)}`) // to know the details of element
 });
 
 Then(/^Click on first search result$/, async function () {
@@ -26,10 +28,24 @@ Then(/^Click on first search result$/, async function () {
 });
 
 Then(/^URL should match (.*)$/, async function (expectedURL) {
-  console.log(`>> ExpectedURL: ${expectedURL}`);
-  // await expect(browser).toHaveUrl(`${ExpectedURL}`) //this line is without chai
-  let url = await browser.getUrl()
-  // chai.expect(url).to.equal(ExpectedURL)
-  console.log(`>> ActualURL: ${url}`);
-  chai.expect(url).to.equal(expectedURL);
+  // console.log(`>> ExpectedURL: ${expectedURL}`);
+  // // await expect(browser).toHaveUrl(`${ExpectedURL}`) //this line is without chai
+  // let url = await browser.getUrl()
+  // // chai.expect(url).to.equal(ExpectedURL)
+  // console.log(`>> ActualURL: ${url}`);
+  // chai.expect(url).to.equal(expectedURL);
+
+
+  //OR
+  //OR by using of waitUntil func to wait until expected browser title is loaded
+    await browser.waitUntil(async function() {
+      return await browser.getTitle() === "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO"
+    }, {timeout: 5000, timeoutMsg: "expected text to be different after 5s", interval: 500}) //interval: 500 means it check for every 500 millisecs
+  
+    // //below are the exaples of other waitUntil use cases // below code will not work
+    // await browser.waitUntil(async function() {
+    //   return (await $("")).isDisplayed()
+    //   return (await $("")).isEnabled()
+    //   return (await $("")).isClickable()
+    // }, {timeout: 5000, timeoutMsg: "expected text to be different after 5s", interval: 500})  
 });
