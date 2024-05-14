@@ -1,0 +1,36 @@
+{
+  "sessionId": "d7b49f7a438eda64d8f04b7118a9a519",
+  "elementId": "f.E4208E15D19E5A9F70EAB362496E0461.d.DC3B7AF2AD8F9DE6160AE491796C89BB.e.1",
+  "element-6066-11e4-a52e-4f735466cecf": "f.E4208E15D19E5A9F70EAB362496E0461.d.DC3B7AF2AD8F9DE6160AE491796C89BB.e.1",
+  "selector": "//textarea[@id='APjFqb']",
+  "parent": {
+    "sessionId": "d7b49f7a438eda64d8f04b7118a9a519",
+    "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "124.0.6367.158",
+      "chrome": {
+        "chromedriverVersion": "124.0.6367.158 (953cfe4b1b3504ce4c1c2a5054dfdabf2747237a-refs/branch-heads/6367@{#1100})",
+        "userDataDir": "C:\\Users\\mahendra\\AppData\\Local\\Temp\\scoped_dir14592_658832184"
+      },
+      "fedcm:accounts": true,
+      "goog:chromeOptions": { "debuggerAddress": "localhost:56847" },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {},
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": { "implicit": 15000, "pageLoad": 20000, "script": 30000 },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:extension:minPinLength": true,
+      "webauthn:extension:prf": true,
+      "webauthn:virtualAuthenticators": true,
+      "wdio:driverPID": 14592
+    }
+  },
+  "isReactElement": false,
+  "isShadowElement": false
+}
