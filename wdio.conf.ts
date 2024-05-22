@@ -6,11 +6,11 @@ dotenv.config();
 // let headless = process.env.HEADLESS;
 // console.log(`>> The headless flag: ${headless}`)
 const headless = process.env.HEADLESS ? process.env.HEADLESS.trim().toUpperCase() : 'N';
-console.log(`Running tests in headless mode: ${headless === 'Y'}`);
+// console.log(`Running tests in headless mode: ${headless === 'Y'}`);
 
 // let debug = process.env.DEBUG;
 const debug = process.env.DEBUG ? process.env.DEBUG.trim().toUpperCase() : 'N';
-console.log(`Running tests in debug mode: ${debug === 'Y'}`);
+// console.log(`Running tests in debug mode: ${debug === 'Y'}`);
 export const config: Options.Testrunner = {
   //
   // ====================
