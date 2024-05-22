@@ -1,0 +1,239 @@
+{
+  "gherkinDocument": {
+    "feature": {
+      "tags": [],
+      "location": { "line": 1, "column": 1 },
+      "language": "en",
+      "keyword": "Feature",
+      "name": "Inventory",
+      "description": "",
+      "children": [
+        {
+          "scenario": {
+            "id": "e85e785d-735f-4482-af3e-9e084079ede4",
+            "tags": [
+              {
+                "location": { "line": 4, "column": 5 },
+                "name": "@demo",
+                "id": "73974858-0e97-4e4a-89b8-5f107e326bac"
+              },
+              {
+                "location": { "line": 4, "column": 11 },
+                "name": "@smoke",
+                "id": "e5afc1f1-c802-41e8-a504-c577bf7b959b"
+              },
+              {
+                "location": { "line": 4, "column": 18 },
+                "name": "@debug",
+                "id": "d901731e-2d27-4cb2-a724-8f325e532f42"
+              }
+            ],
+            "location": { "line": 5, "column": 5 },
+            "keyword": "Scenario Outline",
+            "name": "<TestID>: Demo Inventory",
+            "description": "",
+            "steps": [
+              {
+                "id": "bec31c8c-9d2f-4e91-a126-8aa9109b7d28",
+                "location": { "line": 7, "column": 9 },
+                "keyword": "Given ",
+                "keywordType": "Context",
+                "text": "As a standard user I Login to inventory web app",
+                "dataTable": {
+                  "location": { "line": 8, "column": 13 },
+                  "rows": [
+                    {
+                      "id": "9a97b729-446d-43ad-bb5d-716ab2f77427",
+                      "location": { "line": 8, "column": 13 },
+                      "cells": [
+                        {
+                          "location": { "line": 8, "column": 15 },
+                          "value": "UserType"
+                        },
+                        {
+                          "location": { "line": 8, "column": 26 },
+                          "value": "Username"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "43d7ef0e-b6b4-49d4-bc67-0ead024aa1fc",
+                      "location": { "line": 9, "column": 13 },
+                      "cells": [
+                        {
+                          "location": { "line": 9, "column": 15 },
+                          "value": "StdUser"
+                        },
+                        {
+                          "location": { "line": 9, "column": 26 },
+                          "value": "standard_user"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "35820c31-1444-4fc8-afc3-cd2936786ac8",
+                      "location": { "line": 10, "column": 13 },
+                      "cells": [
+                        {
+                          "location": { "line": 10, "column": 15 },
+                          "value": "probUser"
+                        },
+                        {
+                          "location": { "line": 10, "column": 26 },
+                          "value": "problem_user"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "e2a664d9-b1b8-4ac3-874b-5f46b1c418ac",
+                      "location": { "line": 11, "column": 13 },
+                      "cells": [
+                        {
+                          "location": { "line": 11, "column": 15 },
+                          "value": "perfUser"
+                        },
+                        {
+                          "location": { "line": 11, "column": 26 },
+                          "value": "performance_glitch_user"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "00736b38-0945-4081-adc5-5b8db8305f14",
+                "location": { "line": 12, "column": 9 },
+                "keyword": "Then ",
+                "keywordType": "Outcome",
+                "text": "Inventory page should list <NoOfProducts>"
+              },
+              {
+                "id": "34beaffe-e950-4c8c-8982-46abe2d16f31",
+                "location": { "line": 13, "column": 9 },
+                "keyword": "Then ",
+                "keywordType": "Outcome",
+                "text": "Validate all products have valid price in Inventory page"
+              }
+            ],
+            "examples": [
+              {
+                "id": "1deb35ac-f0dd-425f-99a2-323bf5e2ac88",
+                "tags": [],
+                "location": { "line": 14, "column": 9 },
+                "keyword": "Examples",
+                "name": "",
+                "description": "",
+                "tableHeader": {
+                  "id": "e9a079b3-d4f1-4114-ab16-37c37cd647dc",
+                  "location": { "line": 15, "column": 13 },
+                  "cells": [
+                    {
+                      "location": { "line": 15, "column": 15 },
+                      "value": "TestID"
+                    },
+                    {
+                      "location": { "line": 15, "column": 27 },
+                      "value": "NoOfProducts"
+                    }
+                  ]
+                },
+                "tableBody": [
+                  {
+                    "id": "40b8ef04-2c68-423e-bf21-5a871cdaa66d",
+                    "location": { "line": 16, "column": 13 },
+                    "cells": [
+                      {
+                        "location": { "line": 16, "column": 15 },
+                        "value": "INTV_TC01"
+                      },
+                      { "location": { "line": 16, "column": 27 }, "value": "6" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "comments": [
+      {
+        "location": { "line": 3, "column": 1 },
+        "text": "    # valid price means (>0)"
+      },
+      {
+        "location": { "line": 6, "column": 1 },
+        "text": "        # Given Login to inventory web app"
+      }
+    ],
+    "uri": "test\\features\\Inventory\\Inventory.feature"
+  },
+  "pickle": {
+    "id": "afeebce6-0e7a-4686-bc6e-4383b3c374d6",
+    "uri": "test\\features\\Inventory\\Inventory.feature",
+    "astNodeIds": [
+      "e85e785d-735f-4482-af3e-9e084079ede4",
+      "40b8ef04-2c68-423e-bf21-5a871cdaa66d"
+    ],
+    "name": "INTV_TC01: Demo Inventory",
+    "language": "en",
+    "steps": [
+      {
+        "id": "35d211fe-67c2-4437-8b5d-15ab5bec3d58",
+        "text": "As a standard user I Login to inventory web app",
+        "type": "Context",
+        "argument": {
+          "dataTable": {
+            "rows": [
+              { "cells": [{ "value": "UserType" }, { "value": "Username" }] },
+              {
+                "cells": [{ "value": "StdUser" }, { "value": "standard_user" }]
+              },
+              {
+                "cells": [{ "value": "probUser" }, { "value": "problem_user" }]
+              },
+              {
+                "cells": [
+                  { "value": "perfUser" },
+                  { "value": "performance_glitch_user" }
+                ]
+              }
+            ]
+          }
+        },
+        "astNodeIds": [
+          "bec31c8c-9d2f-4e91-a126-8aa9109b7d28",
+          "40b8ef04-2c68-423e-bf21-5a871cdaa66d"
+        ],
+        "keyword": "Given "
+      },
+      {
+        "id": "74b6d82d-0abb-431a-97e6-9cfc0818f493",
+        "text": "Inventory page should list 6",
+        "type": "Outcome",
+        "astNodeIds": [
+          "00736b38-0945-4081-adc5-5b8db8305f14",
+          "40b8ef04-2c68-423e-bf21-5a871cdaa66d"
+        ],
+        "keyword": "Then "
+      },
+      {
+        "id": "c81aafee-ab5b-429b-81ed-6ea167bc09c5",
+        "text": "Validate all products have valid price in Inventory page",
+        "type": "Outcome",
+        "astNodeIds": [
+          "34beaffe-e950-4c8c-8982-46abe2d16f31",
+          "40b8ef04-2c68-423e-bf21-5a871cdaa66d"
+        ],
+        "keyword": "Then "
+      }
+    ],
+    "tags": [
+      { "name": "@demo", "astNodeId": "73974858-0e97-4e4a-89b8-5f107e326bac" },
+      { "name": "@smoke", "astNodeId": "e5afc1f1-c802-41e8-a504-c577bf7b959b" },
+      { "name": "@debug", "astNodeId": "d901731e-2d27-4cb2-a724-8f325e532f42" }
+    ]
+  },
+  "testCaseStartedId": "88989dc3-b699-4dfa-9218-3bd37f41b159"
+}
