@@ -77,7 +77,7 @@ export const config: Options.Testrunner = {
         //if it is headless === "Y" then it'll consider all flags in 1st squareBracket or else it takes 2nd squareBracket i.e only "--disable-web-security" flag
         //headless.toLocaleLowerCase() ==="Y" means it'll also accept "y"
         args:
-          headless.trim().toUpperCase() === "Y"
+          headless.toUpperCase() === "Y"
             ? [
                 "--disable-web-security",
                 "--headless",
@@ -108,7 +108,7 @@ export const config: Options.Testrunner = {
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   //if it is debug === "Y" then it'll consider debug or else it takes error
   //debug.trim().toUpperCase() ==="Y" means it'll also accept "y"
-  logLevel: debug.trim().toUpperCase() === "Y" ? "debug" : "error", // modified from info to error
+  logLevel: debug.toUpperCase() === "Y" ? "debug" : "error", // modified from info to error
   //
   // Set specific log levels per logger
   // loggers:
