@@ -3,8 +3,10 @@ import fs from "fs"
 import dotenv from "dotenv";
 dotenv.config();
 
-let headless = process.env.HEADLESS;
+// let headless = process.env.HEADLESS;
 // console.log(`>> The headless flag: ${headless}`)
+const headless = process.env.headless ? process.env.headless.trim().toUpperCase() : 'N';
+console.log(`Running tests in headless mode: ${headless === 'Y'}`);
 
 let debug = process.env.DEBUG;
 export const config: Options.Testrunner = {
@@ -76,7 +78,9 @@ export const config: Options.Testrunner = {
       //if it is headless === "Y" then it'll consider all flags in 1st squareBracket or else it takes 2nd squareBracket i.e only "--disable-web-security" flag
         //headless.toLocaleLowerCase() ==="Y" means it'll also accept "y"
       "goog:chromeOptions": {       
-        args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
+        // args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
+        args: headless === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
+
       },
 
       acceptInsecureCerts: true,
