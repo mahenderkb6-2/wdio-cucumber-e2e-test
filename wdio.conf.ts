@@ -81,7 +81,7 @@ export const config: Options.Testrunner = {
         //headless.toLocaleLowerCase() ==="Y" means it'll also accept "y"
       "goog:chromeOptions": {       
         // args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
-        args: headless === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
+        args: headless === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080", "--disable-gpu", "--disable-software-rasterizer", "--remote-debugging-port=9222"] : [],
 
       },
 
