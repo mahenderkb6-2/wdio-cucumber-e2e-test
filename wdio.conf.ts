@@ -3,8 +3,7 @@ import fs from "fs"
 import dotenv from "dotenv";
 dotenv.config();
 
-// let headless = process.env.HEADLESS;
-let headless = (process.env.HEADLESS).trim().toUpperCase()
+let headless = process.env.HEADLESS;
 // console.log(`>> The headless flag: ${headless}`)
 
 let debug = process.env.DEBUG;
@@ -77,20 +76,18 @@ export const config: Options.Testrunner = {
       //if it is headless === "Y" then it'll consider all flags in 1st squareBracket or else it takes 2nd squareBracket i.e only "--disable-web-security" flag
         //headless.toLocaleLowerCase() ==="Y" means it'll also accept "y"
       "goog:chromeOptions": {       
-        // args: headless.toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
-        args: headless === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
-
+        args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
       },
 
       acceptInsecureCerts: true,
       timeouts: { implicit: 15000, pageLoad: 20000, script: 30000 },
     },
-    {
-      maxInstances: 3, //usally 3-5
-      browserName: "firefox",
-      acceptInsecureCerts: true,
-      timeouts: { implicit: 15000, pageLoad: 20000, script: 30000 },
-    },
+    // {
+    //   maxInstances: 3, //usally 3-5
+    //   browserName: "firefox",
+    //   acceptInsecureCerts: true,
+    //   timeouts: { implicit: 15000, pageLoad: 20000, script: 30000 },
+    // },
   ],
 
   //
@@ -102,7 +99,7 @@ export const config: Options.Testrunner = {
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   //if it is debug === "Y" then it'll consider debug or else it takes error
   //debug.trim().toUpperCase() ==="Y" means it'll also accept "y"
-  logLevel: debug.toUpperCase() === "Y" ? "debug" : "error", // modified from info to error
+  logLevel: debug.trim().toUpperCase() === "Y" ? "debug" : "error", // modified from info to error
   //
   // Set specific log levels per logger
   // loggers:
