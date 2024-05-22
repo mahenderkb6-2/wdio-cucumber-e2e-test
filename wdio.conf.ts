@@ -3,14 +3,29 @@ import fs from "fs"
 import dotenv from "dotenv";
 dotenv.config();
 
-let headless = process.env.HEADLESS;
+// let headless = process.env.HEADLESS;
 // console.log(`>> The headless flag: ${headless}`)
 // const headless = process.env.HEADLESS ? process.env.HEADLESS.trim().toUpperCase() : 'N';
 // console.log(`Running tests in headless mode: ${headless === 'Y'}`);
+let headless = process.env.HEADLESS;
+headless = headless.trim().toUpperCase()
+headless=headless
 
-let debug = process.env.DEBUG;
+
+
+
+
+// let debug = process.env.DEBUG;
 // const debug = process.env.DEBUG ? process.env.DEBUG.trim().toUpperCase() : 'N';
 // console.log(`Running tests in debug mode: ${debug === 'Y'}`);
+let debug = process.env.DEBUG;
+debug=debug.trim().toUpperCase()
+debug=debug
+
+
+
+
+
 export const config: Options.Testrunner = {
   //
   // ====================
@@ -82,7 +97,8 @@ export const config: Options.Testrunner = {
         //if it is headless === "Y" then it'll consider all flags in 1st squareBracket or else it takes 2nd squareBracket i.e only "--disable-web-security" flag
         //headless.toLocaleLowerCase() ==="Y" means it'll also accept "y"
         args:
-          headless.trim().toUpperCase() === "Y"
+          // headless.trim().toUpperCase() === "Y"
+          headless === "Y"
             ? [
                 "--disable-web-security",
                 "--headless",
@@ -113,7 +129,14 @@ export const config: Options.Testrunner = {
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   //if it is debug === "Y" then it'll consider debug or else it takes error
   //debug.trim().toUpperCase() ==="Y" means it'll also accept "y"
-  logLevel: debug.trim().toUpperCase() === "Y" ? "debug" : "error", // modified from info to error
+  // logLevel: debug.trim().toUpperCase() === "Y" ? "debug" : "error", // modified from info to error
+  logLevel: debug === "Y" ? "debug" : "error", // modified from info to error
+
+
+
+
+
+
   // logLevel: debug === "Y" ? "debug" : "error",
   //
   // Set specific log levels per logger
