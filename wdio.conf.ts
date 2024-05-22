@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // let headless = process.env.HEADLESS;
-let headless = (process.env.HEADLESS).toUpperCase()
+let headless = (process.env.HEADLESS).trim().toUpperCase()
 // console.log(`>> The headless flag: ${headless}`)
 
 let debug = process.env.DEBUG;
