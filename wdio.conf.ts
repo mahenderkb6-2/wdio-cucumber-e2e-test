@@ -73,19 +73,10 @@ export const config: Options.Testrunner = {
       browserName: "chrome",
 
       //demo to skip SSL certificates
-      "goog:chromeOptions": {
-        //if it is headless === "Y" then it'll consider all flags in 1st squareBracket or else it takes 2nd squareBracket i.e only "--disable-web-security" flag
+      //if it is headless === "Y" then it'll consider all flags in 1st squareBracket or else it takes 2nd squareBracket i.e only "--disable-web-security" flag
         //headless.toLocaleLowerCase() ==="Y" means it'll also accept "y"
-        args:
-          headless.toUpperCase() === "Y"
-            ? [
-                "--disable-web-security",
-                "--headless",
-                "--disable-dev-shm-usage",
-                "--no-sandbox",
-                "--window-size=1920,1080",
-              ]
-            : [],
+      "goog:chromeOptions": {       
+        args: headless.toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : [],
       },
 
       acceptInsecureCerts: true,
